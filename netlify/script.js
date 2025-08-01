@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     async function callSecureProxy(action, payload) {
         try {
-            // =================================================================
-            //                      !!! התיקון נמצא כאן !!!
-            // The URL was changed to the direct Netlify function path to fix the 404 error.
-            // =================================================================
             const response = await fetch('/.netlify/functions/proxy', { // The secure endpoint
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -27,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================================
-    // Gemini API Feature Logic (Process Analyzer) - NOW SECURE
+    // Gemini API Feature Logic (Process Analyzer) - NOW SECURE & IN HEBREW
     // ============================================
     const generateBtn = document.getElementById('generate-idea-btn');
     const processDescription = document.getElementById('process-description');
@@ -49,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             geminiResponseEl.textContent = '';
 
             try {
-                const prompt = `You are an expert automation consultant... User's process: "${userInput}"`; // Your original prompt
+                // !!! UPDATED PROMPT TO REQUEST HEBREW RESPONSE !!!
+                const prompt = `You are an expert automation consultant for Israeli small businesses. Your goal is to provide a creative, actionable automation idea based on the user's description. User's process: "${userInput}". IMPORTANT: Your entire response must be in Hebrew.`;
                 const result = await callSecureProxy('analyzeProcess', { prompt });
                 geminiResponseEl.textContent = result.text;
             } catch (error) {
@@ -61,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================================
-    // Gemini API Feature Logic (ROI Calculator) - NOW SECURE
+    // Gemini API Feature Logic (ROI Calculator) - NOW SECURE & IN HEBREW
     // ============================================
     const calculateRoiBtn = document.getElementById('calculate-roi-btn');
     const roiProblem = document.getElementById('roi-problem');
@@ -86,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             roiResponseEl.textContent = '';
 
             try {
-                const prompt = `You are an expert business automation ROI analyst... User's problem: "${problemInput}", Monthly hours wasted: ${hoursInput}`; // Your original prompt
+                // !!! UPDATED PROMPT TO REQUEST HEBREW RESPONSE !!!
+                const prompt = `You are an expert business automation ROI analyst for Israeli businesses. Based on the user's problem and estimated wasted hours, calculate the potential yearly savings and describe the value of automation. User's problem: "${problemInput}", Monthly hours wasted: ${hoursInput}. Assume an average hourly cost of 100 ILS. IMPORTANT: Your entire response must be in Hebrew.`;
                 const result = await callSecureProxy('calculateRoi', { prompt });
                 roiResponseEl.textContent = result.text;
             } catch (error) {
