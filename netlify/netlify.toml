@@ -1,0 +1,5 @@
+# This configuration file tells Netlify where to find serverless functions.
+# This is the most critical setting for your site to work.
+
+[functions]
+  directory = "functions"

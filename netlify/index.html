@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שם הסוכנות | פתרונות דיגיטליים לצמיחה עסקית</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black">
+
+    <header class="bg-black relative overflow-hidden h-[80vh] md:h-screen flex items-center justify-center">
+        <img src="https://cdn.prod.website-files.com/686ee957baee73f278d8f521/68717dcf486e0f93b6cbcf0d_n8n1gif-ezgif.com-video-to-gif-converter.gif" alt="רקע דינמי" class="absolute z-0 w-full h-full object-cover scale-150">
+        <div class="absolute inset-0 bg-black/70 z-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
+            <p class="text-fuchsia-400 font-semibold tracking-wide uppercase fade-in-up">פתרונות דיגיטליים מבוססי תוצאות</p>
+            <h1 class="text-4xl md:text-6xl font-black text-white mt-4 mb-6 leading-tight fade-in-up delay-1">
+                הפכו את העסק שלכם למכונת צמיחה יעילה
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in-up delay-2">
+                אנו בונים פתרונות דיגיטליים שמזניקים את ההכנסות, חוסכים עשרות שעות עבודה ומספקים יתרון תחרותי ברור.
+            </p>
+            <div class="fade-in-up delay-3">
+                <a href="#form" class="bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg glow-on-hover inline-block">
+                    קבעו שיחת ייעוץ ללא עלות
+                </a>
+                <p class="text-sm text-gray-500 mt-3">בואו נגלה יחד איך להזניק את העסק שלכם קדימה</p>
+            </div>
+        </div>
+    </header>
+    
+    <section class="py-12 bg-black relative z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest">מומחים בטכנולוגיות המובילות בשוק</h3>
+            <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 md:gap-x-16 mt-8">
+                <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase Logo" class="h-7" title="Supabase">
+                <img src="https://cdn.simpleicons.org/n8n/1A8276" alt="n8n Logo" class="h-7" title="n8n">
+                <img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets Logo" class="h-7" title="Google Sheets">
+                <img src="https://cdn.simpleicons.org/airtable/18BFFF" alt="Airtable Logo" class="h-7" title="Airtable">
+                <img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="Zapier Logo" class="h-7" title="Zapier">
+                <img src="https://cdn.simpleicons.org/make/6D45DE" alt="Make.com Logo" class="h-7" title="Make.com">
+                <img src="https://cdn.simpleicons.org/webflow/4353FF" alt="Webflow Logo" class="h-7" title="Webflow">
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <section class="mb-24 text-center bg-gray-900/50 p-6 md:p-10 rounded-2xl border border-gray-800 relative">
+            <div class="background-glow top-[-150px] right-[-150px] opacity-70"></div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">מנתח התהליכים החכם</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">לא בטוחים מאיפה להתחיל? תארו לנו תהליך ידני או מסורבל בעסק שלכם, והבינה המלאכותית שלנו תציע לכם רעיון לאוטומציה באופן מיידי.</p>
+            
+            <div class="max-w-2xl mx-auto">
+                <textarea id="process-description" rows="4" placeholder="לדוגמה: 'כל בוקר אני מעתיק ידנית לידים חדשים מהמייל לקובץ אקסל...'" class="w-full bg-gray-800 text-white px-4 py-3 border border-gray-700 rounded-lg focus:ring-fuchsia-500 focus:border-fuchsia-500 mb-4"></textarea>
+                <button id="generate-idea-btn" class="w-full bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white font-bold text-lg px-8 py-3 rounded-lg shadow-lg glow-on-hover">
+                    ✨ קבלו רעיון לאוטומציה
+                </button>
+            </div>
+
+            <div id="gemini-result-container" class="mt-8 text-right bg-black p-6 rounded-lg border border-gray-800 min-h-[100px] hidden">
+                <div id="gemini-loader" class="flex justify-center items-center">
+                    <svg class="animate-spin h-8 w-8 text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </div>
+                <p id="gemini-response" class="text-gray-300"></p>
+            </div>
+        </section>
+
+        <section class="space-y-20 md:space-y-24 mb-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-right">
+                    <span class="text-fuchsia-400 font-semibold">אוטומציה וייעול</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">הגדלת תפוקה ב-30% בממוצע</h2>
+                    <p class="text-gray-400 text-lg">אוטומציות חכמות יכולות לחסוך לכל עובד עד 15 שעות שבועיות. אנו ממפים תהליכים ידניים, בונים מערכת אוטומטית ומפנים את הצוות שלכם למשימות שמכניסות כסף.</p>
+                </div>
+                <div class="bg-gray-900/50 p-4 rounded-xl border border-gray-800 floating-element">
+                    <img src="https://cdn.prod.website-files.com/686ee957baee73f278d8f521/68717f0e1db9b16b9491797f_n8n2gif-ezgif.com-video-to-gif-converter.gif" alt="אוטומציה של תהליכים" class="rounded-lg w-full">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                 <div class="bg-gray-900/50 p-4 rounded-xl border border-gray-800 md:order-last floating-element" style="animation-delay: -3s;">
+                    <img src="https://cdn.prod.website-files.com/686ee957baee73f278d8f521/68717abef0ca6196cdaf11b3_filloutigif-ezgif.com-video-to-gif-converter.gif" alt="בניית אתרים ואפליקציות" class="rounded-lg w-full">
+                </div>
+                <div class="text-right">
+                    <span class="text-fuchsia-400 font-semibold">פיתוח אתרים ואפליקציות</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">הכפילו את יחס ההמרה שלכם</h2>
+                    <p class="text-gray-400 text-lg">אתר או אפליקציה מהירים עם חווית משתמש מושלמת יכולים להכפיל את כמות הלקוחות הפונים. אנו בונים נכסים דיגיטליים שממירים גולשים ללקוחות משלמים.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-right">
+                    <span class="text-fuchsia-400 font-semibold">מערכות CRM ודאטה</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">צמיחה של 25% במכירות עם CRM נכון</h2>
+                    <p class="text-gray-400 text-lg">ניהול קשרי לקוחות יעיל מגדיל שימור לקוחות ומעלה את ערך הלקוח הממוצע. אנו מטמיעים מערכות CRM שמספקות תמונה מלאה ומאפשרות לכם למכור יותר, בקלות.</p>
+                </div>
+                <div class="bg-gray-900/50 p-4 rounded-xl border border-gray-800 floating-element">
+                    <img src="https://cdn.prod.website-files.com/686ee957baee73f278d8f521/68717bce36bb3805b48ca41f_aritabelgif-ezgif.com-video-to-gif-converter.gif" alt="הדגמת מילוי טופס CRM" class="rounded-lg w-full">
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">התהליך הפשוט שלנו להצלחה שלך</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">אנחנו מאמינים בשקיפות ובתהליך סדור. כך נעבוד יחד כדי להזניק את העסק שלך קדימה.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 text-center transition-all duration-300 hover:border-fuchsia-500/50 hover:bg-gray-900 hover:-translate-y-2">
+                        <div class="mb-4"><span class="text-5xl font-bold text-fuchsia-400">01</span></div>
+                        <h3 class="text-xl font-bold text-white mt-6 mb-2">אבחון ואסטרטגיה</h3>
+                        <p class="text-gray-400">נקיים שיחת עומק כדי להבין את המטרות, האתגרים וההזדמנויות שלכם. נגבש יחד אסטרטגיה טכנולוגית מותאמת אישית.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 text-center transition-all duration-300 hover:border-fuchsia-500/50 hover:bg-gray-900 hover:-translate-y-2">
+                        <div class="mb-4"><span class="text-5xl font-bold text-fuchsia-400">02</span></div>
+                        <h3 class="text-xl font-bold text-white mt-6 mb-2">פיתוח והטמעה</h3>
+                        <p class="text-gray-400">הצוות שלנו יפתח את הפתרון המותאם לכם. נדאג להטמעה חלקה בעסק שלכם.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 text-center transition-all duration-300 hover:border-fuchsia-500/50 hover:bg-gray-900 hover:-translate-y-2">
+                        <div class="mb-4"><span class="text-5xl font-bold text-fuchsia-400">03</span></div>
+                        <h3 class="text-xl font-bold text-white mt-6 mb-2">השקה ותמיכה</h3>
+                        <p class="text-gray-400">לאחר ההשקה, אנחנו לא נעלמים. נספק לכם תמיכה ונוודא שהפתרון משיג תוצאות.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-900/30 rounded-2xl mb-24 border border-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-white text-center mb-12">מה לקוחות מספרים עלינו</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col justify-center">
+                        <img src="https://cdn.prod.website-files.com/686ee957baee73f278d8f521/687178192749cba29814b3d4_WhatsApp%20Image%202025-07-11%20at%2023.20.53.jpeg" alt="עדות מלקוח" class="rounded-lg w-full">
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col justify-center">
+                       <img src="https://cdn.prod.website-files.com/686ee957baee73f278d8f521/68722a008ca503020268ce73_Screenshot%202025-07-10%20at%2019.15.36.png.png" alt="עדות מלקוח" class="rounded-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24 text-center bg-gray-900/50 p-6 md:p-10 rounded-2xl border border-gray-800 relative">
+            <div class="background-glow bottom-[-150px] left-[-150px] opacity-70"></div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">מחשבון החזר השקעה (ROI) חכם</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">רוצים לראות מספרים? תארו בעיה עסקית, העריכו כמה שעות עבודה חודשיות היא עולה לכם, וה-AI שלנו יחשב את החיסכון הפוטנציאלי.</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-4 mb-4">
+                    <textarea id="roi-problem" rows="3" placeholder="תארו את הבעיה או התהליך הידני..." class="md:col-span-2 w-full bg-gray-800 text-white px-4 py-3 border border-gray-700 rounded-lg focus:ring-fuchsia-500 focus:border-fuchsia-500"></textarea>
+                    <input type="number" id="roi-hours" placeholder="שעות מבוזבזות בחודש" class="w-full bg-gray-800 text-white px-4 py-3 border border-gray-700 rounded-lg focus:ring-fuchsia-500 focus:border-fuchsia-500">
+                </div>
+                <button id="calculate-roi-btn" class="w-full bg-gradient-to-r from-green-500 to-teal-600 text-white font-bold text-lg px-8 py-3 rounded-lg shadow-lg glow-on-hover">
+                    ✨ חשבו לי החזר השקעה
+                </button>
+            </div>
+
+            <div id="roi-result-container" class="mt-8 text-right bg-black p-6 rounded-lg border border-gray-800 min-h-[100px] hidden">
+                <div id="roi-loader" class="flex justify-center items-center">
+                    <svg class="animate-spin h-8 w-8 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </div>
+                <p id="roi-response" class="text-gray-300"></p>
+            </div>
+        </section>
+
+
+        <section id="form" class="bg-gray-900/50 p-6 md:p-10 rounded-2xl border border-gray-800 mb-24 relative overflow-hidden">
+            <div class="background-glow top-[-200px] left-[-200px]"></div>
+            <div class="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">מוכנים להפוך את העסק שלכם ליעיל יותר?</h2>
+                    <p class="text-gray-400 mb-4">השאירו פרטים לשיחת ייעוץ חינמית וגלו איך הטכנולוגיה הנכונה יכולה לשנות את כללי המשחק עבורכם.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-fuchsia-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            <span><span class="font-bold text-white">אבחון עסקי-טכנולוגי</span> ללא עלות.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-fuchsia-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            <span><span class="font-bold text-white">הערכה כמותית</span> של פוטנציאל החיסכון והצמיחה.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-fuchsia-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            <span><span class="font-bold text-white">הצעה ראשונית</span> ללא כל התחייבות.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-black p-6 rounded-lg border border-gray-800">
+                    <h3 class="text-xl font-bold text-white text-center mb-4">התחילו כאן</h3>
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <input type="text" id="name" name="name" placeholder="שם מלא" class="w-full bg-gray-800 text-white px-4 py-3 border border-gray-700 rounded-lg focus:ring-fuchsia-500 focus:border-fuchsia-500" required>
+                                <input type="email" id="email" name="email" placeholder="כתובת אימייל" class="w-full bg-gray-800 text-white px-4 py-3 border border-gray-700 rounded-lg focus:ring-fuchsia-500 focus:border-fuchsia-500" required>
+                            </div>
+                            <input type="tel" id="phone" name="phone" placeholder="טלפון" class="w-full bg-gray-800 text-white px-4 py-3 border border-gray-700 rounded-lg focus:ring-fuchsia-500 focus:border-fuchsia-500">
+                            
+                            <select id="topic" name="topic" class="w-full bg-gray-800 text-white px-4 py-3 border border-gray-700 rounded-lg focus:ring-fuchsia-500 focus:border-fuchsia-500" required>
+                                <option value="" disabled selected>באיזה נושא תרצו ייעוץ?</option>
+                                <option value="automation">אוטומציה וייעול תהליכים</option>
+                                <option value="development">בניית אתר או אפליקציה</option>
+                                <option value="crm_data">הטמעת מערכת CRM ודאטה</option>
+                                <option value="general">ייעוץ כללי</option>
+                            </select>
+
+                            <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white font-bold text-lg px-8 py-3 rounded-lg shadow-lg glow-on-hover">
+                                אני רוצה לקבוע שיחת ייעוץ!
+                            </button>
+                            <p class="text-xs text-gray-500 mt-3 text-center">
+                                🔒 בעצם שליחת פרטיי אני מאשר/ת לקבל דיוור בהודעות ווצאפ ומייל. ידוע לי שאוכל לבטל את הסכמתי בכל עת בשליחת המילה “הסר” במייל או בווצאפ. הפרטים יישמרו באופן מאובטח ולא יועברו לגורם שלישי
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-center mb-10">שאלות נפוצות</h2>
+            <div class="space-y-4" id="faq-container">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-lg text-white">
+                        <span>עם אילו סוגי עסקים אתם עובדים?</span>
+                        <svg class="faq-arrow h-6 w-6 transform transition-transform duration-300 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="p-5 pt-0 text-gray-400">אנו מתמחים בעבודה עם עסקים קטנים ובינוניים (SMBs) ועסקים בצמיחה שמרגישים שהטכנולוגיה הנוכחית שלהם מעכבת אותם. יש לנו ניסיון במגוון תחומים, החל מאיקומרס ועד חברות שירותים ו-B2B.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-lg text-white">
+                        <span>מה העלות של הפרויקטים שלכם?</span>
+                        <svg class="faq-arrow h-6 w-6 transform transition-transform duration-300 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="p-5 pt-0 text-gray-400">כל פרויקט מתומחר באופן אישי בהתאם למורכבות והיקף העבודה. לאחר שיחת האבחון הראשונית, נוכל לספק לכם הצעת מחיר מפורטת ושקופה לחלוטין, המותאמת לתקציב ולמטרות שלכם.</p>
+                    </div>
+                </div>
+                 <div class="bg-gray-900/50 border border-gray-800 rounded-lg">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-lg text-white">
+                        <span>כמה זמן לוקח פרויקט ממוצע?</span>
+                        <svg class="faq-arrow h-6 w-6 transform transition-transform duration-300 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="p-5 pt-0 text-gray-400">לוחות הזמנים משתנים. פרויקט אוטומציה קטן יכול לקחת מספר שבועות, בעוד שבניית אפליקציה מורכבת או מערכת CRM מותאמת אישית יכולה לקחת מספר חודשים. אנו מאמינים בשקיפות מלאה ומגדירים לוחות זמנים ברורים בתחילת כל פרויקט.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p class="font-bold text-xl text-white mb-2">Autoflowr</p>
+            <p class="text-gray-500">&copy; 2025 כל הזכויות שמורות.</p>
+            <p class="text-gray-500 text-sm mt-2">
+                <a href="./privacy-policy.html" class="hover:text-white">מדיניות פרטיות</a> | <a href="./terms-of-service.html" class="hover:text-white">תנאי שימוש</a>
+            </p>
+        </div>
+    </footer>
+
+    <div id="coupon-trigger" class="fixed bottom-6 right-6 z-50">
+        <button class="bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white font-bold px-6 py-3 rounded-full shadow-lg glow-on-hover">
+          🎁 קבלו 15% הנחה!
+        </button>
+    </div>
+
+    <div id="coupon-modal" class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center hidden">
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 max-w-md w-full relative text-right text-white">
+            <button id="close-modal" class="absolute top-3 left-4 text-white text-xl font-bold">&times;</button>
+            <h2 class="text-2xl font-bold mb-3 text-fuchsia-400">הנחה בלעדית לזמן מוגבל</h2>
+            <p class="text-gray-300 mb-4">השאירו פרטים וקבלו <span class="font-bold text-white">15% הנחה</span> על השירותים שלנו. תקף לשבוע בלבד!</p>
+            <form id="coupon-form" class="space-y-4">
+                <input type="text" name="name" placeholder="שם מלא" required class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-fuchsia-500">
+                <input type="email" name="email" placeholder="אימייל" required class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-fuchsia-500">
+                <input type="tel" name="phone" placeholder="טלפון" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-fuchsia-500">
+                <input type="hidden" name="coupon" value="15% הנחה">
+                <button type="submit" class="w-full bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white font-bold py-3 rounded-lg shadow-lg glow-on-hover">
+                    שלחו לי את ההנחה 🎉
+                </button>
+                <p class="text-xs text-gray-500 mt-2">
+                    ❗ ההטבה בתוקף לשבוע בלבד ולפי זמינות השירותים.<br>
+                    👁️‍🗨️ בהשארת הפרטים אני מאשר/ת קבלת דיוור במייל/ווטסאפ בהתאם <a href="./terms-of-service.html" class="underline hover:text-white">לתקנון</a>.
+                </p>
+                <p id="success-msg" class="text-green-400 text-sm text-center pt-2" style="display: none;">✅ הטופס נשלח בהצלחה!</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* הגדרת פונט ברירת מחדל ורקע כהה */
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color: #0D0D0D;
+    color: #E0E0E0;
+    overflow-x: hidden;
+}
+/* אפקט זוהר סגול לכפתורים ואלמנטים */
+.glow-on-hover {
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.glow-on-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(192, 38, 211, 0.6);
+}
+/* אנימציה עדינה לכניסת אלמנטים */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* אנימציית ריחוף עדינה */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+/* אלמנט זוהר לרקע */
+.background-glow {
+    position: absolute;
+    z-index: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(192, 38, 211, 0.1) 0%, rgba(13, 13, 13, 0) 70%);
+    filter: blur(100px);
+    pointer-events: none;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+/* Style for the select dropdown arrow */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%239ca3af' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 0.75rem center;
+    padding-right: 2.5rem;
+}
+/* Gemini Feature Styles */
+#gemini-result-container, #roi-result-container {
+    white-space: pre-wrap;
+}
+/* Coupon Popup Styles */
+#success-msg { 
+    display: none; 
+}
